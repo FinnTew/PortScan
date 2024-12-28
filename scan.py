@@ -54,7 +54,7 @@ def scan_host(host, start_port, end_port, timeout=0.5, max_threads=100, rate_lim
             time.sleep(rate_limit)
             return result
 
-        results = list(tqdm(executor.map(rate_limited_scan, ports), total=len(ports), desc=f"Scanning {host}"))
+        results = list(tqdm(executor.map(rate_limited_scan, ports), total=len(ports), desc=f"正在扫描 {host}"))
 
     open_ports = [port for port in results if port]
 
