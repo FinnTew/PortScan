@@ -120,13 +120,13 @@ def main():
         dire = args.result_dir
 
         if start_port < 0 or end_port > 65535 or start_port > end_port:
-            raise ValueError("Invalid port range.")
+            raise ValueError("无效的端口范围")
 
         if max_threads <= 0:
-            raise ValueError("Number of threads must be a positive integer.")
+            raise ValueError("线程数必须为一个正整数")
 
         if rate_limit < 0:
-            raise ValueError("Rate limit must be non-negative.")
+            raise ValueError("速率限制必须为一个非负数")
 
         # 判断是单个主机还是子网
         if "/" in target:  # 子网扫描
